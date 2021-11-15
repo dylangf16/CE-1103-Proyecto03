@@ -49,7 +49,7 @@ public class Dijkstra_Algorithm {
         int graph[][] = new int[][] {
                 { 0, 4, 8, 0, 0 },
                 { 4, 0, 2, 5, 0 },
-                { 8, 2, 0, 5, 9},
+                { 8, 2, 0, 5, 9 },
                 { 0, 5, 5, 0, 4 },
                 { 0, 0, 9, 4, 0 } };
         Dijkstra_Algorithm t = new Dijkstra_Algorithm();

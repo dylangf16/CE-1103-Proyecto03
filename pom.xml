@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.proyecto03pathfinder/com.example.proyecto03pathfinder.HelloApplication
+                                com.example.proyecto03pathfinder/com.example.proyecto03pathfinder.Mapa_Application
                             </mainClass>
                         </configuration>
                     </execution>
