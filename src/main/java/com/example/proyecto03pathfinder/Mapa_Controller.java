@@ -1,23 +1,62 @@
-/**
- * Sample Skeleton for 'Mapa.fxml' Controller Class
- */
-
 package com.example.proyecto03pathfinder;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.shape.Circle;
 
 public class Mapa_Controller {
 
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
+    @FXML
+    private Circle D;
 
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
+    @FXML
+    private Circle C;
 
-    @FXML // This method is called by the FXMLLoader when initialization is complete
-    void initialize() {
+    @FXML
+    private Circle B;
 
-    }
+    @FXML
+    private Circle A;
+
+    @FXML
+    private Circle F;
+
+    @FXML
+    private Circle E;
+
+    @FXML
+    private Circle J;
+
+    @FXML
+    private Circle I;
+
+    @FXML
+    private Circle H;
+
+    @FXML
+    private Circle G;
+
+    @FXML
+    private Circle K;
+
+    @FXML
+    private Circle L;
+
+    @FXML
+    private Circle M;
+
+    @FXML
+    private Circle N;
+
+    @FXML
+    private Circle Ñ;
+
+    @FXML
+    private Circle O;
+
+    @FXML
+    private Circle P;
+
+    @FXML
+    private Circle Q;
+
 }

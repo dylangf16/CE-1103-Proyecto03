@@ -12,7 +12,7 @@ public class Mapa_Application extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Mapa_Application.class.getResource("Mapa.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1222, 709);
-        stage.setTitle("Hello!");
+        stage.setTitle("Poray");
         stage.setScene(scene);
         stage.show();
     }

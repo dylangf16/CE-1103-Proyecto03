@@ -14,12 +14,16 @@ public class Dijkstra_Algorithm {
         for (int i = 0; i < vertexCount; i++){
             //find the neighbouring unvisited vertex having  minimum distance from source vertex
             //for the first time u will be the source vertex and the distance array will be updated with the neighbouring vertex distance of source vertex
+
             int u = findMinDistance(distance, visitedVertex);
             //u is the row and v is the column
+
             visitedVertex[u] = true;
             //now update all the neighbour vertex distances
+
             for (int v =0 ; v < vertexCount; v++){
                 //graph[u][v] != 0 -> there should be a direct edge
+
                 if(!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])){
                     distance[v] = distance[u] + graph[u][v];
                 }
@@ -37,6 +41,7 @@ public class Dijkstra_Algorithm {
         for (int i =0; i < distance.length; i++){
             //the vertex should not be visited and the distance should be the minimum.
             //this is similar to finding the min element of an array
+
             if(!visitedVertex[i] && distance[i] < minDistance){
                 minDistance = distance[i];
                 minDistanceVertex = i;
@@ -53,6 +58,6 @@ public class Dijkstra_Algorithm {
                 { 0, 5, 5, 0, 4 },
                 { 0, 0, 9, 4, 0 } };
         Dijkstra_Algorithm t = new Dijkstra_Algorithm();
-        t.dijkstra(graph, 3);
+        t.dijkstra(graph, 0);
     }
 }

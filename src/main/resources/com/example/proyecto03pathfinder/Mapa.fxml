@@ -5,11 +5,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto03pathfinder.Mapa_Controller">
    <children>
-      <ImageView fitHeight="716.0" fitWidth="1222.0" opacity="0.24">
+      <ImageView fitHeight="716.0" fitWidth="1222.0" opacity="0.47">
          <image>
             <Image url="@../../../../../../../../../../../../../../Desktop/Mapa.png" />
          </image>
@@ -36,23 +37,133 @@
       <Line endX="714.0" endY="-268.0" fill="#5f1dbc" layoutX="351.0" layoutY="480.0" startX="515.5" startY="-228.5" stroke="#7c0acd" strokeWidth="5.0" />
       <Line endX="504.5" endY="-238.5" fill="#5f1dbc" layoutX="361.0" layoutY="490.0" startX="318.0" startY="-179.0" stroke="#7c0acd" strokeWidth="5.0" />
       <Line endX="-6.0" endY="17.0" fill="#5f1dbc" layoutX="268.0" layoutY="400.0" startX="90.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Circle fill="#008eff" layoutX="123.0" layoutY="467.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="264.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="212.0" layoutY="520.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="221.0" layoutY="654.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="283.0" layoutY="304.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="359.0" layoutY="398.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="483.0" layoutY="295.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="422.0" layoutY="211.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="368.0" layoutY="132.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="136.0" layoutY="249.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="566.0" layoutY="275.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="685.0" layoutY="224.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="1066.0" layoutY="209.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="866.0" layoutY="251.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="679.0" layoutY="311.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="496.0" layoutY="480.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="696.0" layoutY="530.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#008eff" layoutX="576.0" layoutY="631.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="D" fill="#008eff" layoutX="123.0" layoutY="467.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="C" fill="#008eff" layoutX="264.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="B" fill="#008eff" layoutX="212.0" layoutY="520.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="A" fill="#008eff" layoutX="221.0" layoutY="654.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="F" fill="#008eff" layoutX="283.0" layoutY="304.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="E" fill="#008eff" layoutX="359.0" layoutY="398.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="J" fill="#008eff" layoutX="483.0" layoutY="295.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="I" fill="#008eff" layoutX="422.0" layoutY="211.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="H" fill="#008eff" layoutX="368.0" layoutY="132.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="G" fill="#008eff" layoutX="136.0" layoutY="249.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="K" fill="#008eff" layoutX="566.0" layoutY="275.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="L" fill="#008eff" layoutX="685.0" layoutY="224.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="M" fill="#008eff" layoutX="1066.0" layoutY="209.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="N" fill="#008eff" layoutX="866.0" layoutY="251.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="Ñ" fill="#008eff" layoutX="679.0" layoutY="311.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="O" fill="#008eff" layoutX="496.0" layoutY="480.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="P" fill="#008eff" layoutX="696.0" layoutY="530.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="Q" fill="#008eff" layoutX="576.0" layoutY="631.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="149.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.08">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="240.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.46">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="229.0" layoutY="609.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.23">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="229.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.06">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="157.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.11">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="211.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.17">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="410.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.08">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="465.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.07">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="433.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.09">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="296.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.06">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="328.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.04">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="350.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.12">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="517.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.05">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="605.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.08">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="826.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.31">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="956.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.15">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="783.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.16">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="605.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.15">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="587.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.15">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="648.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.14">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="491.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.11">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="417.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.08">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
