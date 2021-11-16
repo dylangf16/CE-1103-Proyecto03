@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Mapa_Application extends Application {
+public class Datos_Application extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Mapa_Application.class.getResource("Mapa.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Mapa_Application.class.getResource("Datos.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1222, 709);
         stage.setTitle("Porahí-PathFinder");
         stage.setScene(scene);

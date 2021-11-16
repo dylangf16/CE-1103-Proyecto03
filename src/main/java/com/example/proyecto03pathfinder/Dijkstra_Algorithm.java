@@ -2,16 +2,16 @@ package com.example.proyecto03pathfinder;
 
 public class Dijkstra_Algorithm {
 
-    public static void dijkstra(int[][] graph, int sourceVertex){
+    public static void dijkstra(int[][] graph, int sourceVertex) {
         int vertexCount = graph.length;
         boolean[] visitedVertex = new boolean[vertexCount];
         int[] distance = new int[vertexCount];
-        for (int i = 0; i < vertexCount; i++){
+        for (int i = 0; i < vertexCount; i++) {
             visitedVertex[i] = false;
             distance[i] = Integer.MAX_VALUE;
         }
         distance[sourceVertex] = 0; // distance of source vertex to itself is zero
-        for (int i = 0; i < vertexCount; i++){
+        for (int i = 0; i < vertexCount; i++) {
             //find the neighbouring unvisited vertex having  minimum distance from source vertex
             //for the first time u will be the source vertex and the distance array will be updated with the neighbouring vertex distance of source vertex
 
@@ -21,19 +21,21 @@ public class Dijkstra_Algorithm {
             visitedVertex[u] = true;
             //now update all the neighbour vertex distances
 
-            for (int v =0 ; v < vertexCount; v++){
+            for (int v = 0; v < vertexCount; v++) {
                 //graph[u][v] != 0 -> there should be a direct edge
 
-                if(!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])){
+                if (!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])) {
                     distance[v] = distance[u] + graph[u][v];
                 }
             }
         }
-        for (int i = 0; i < distance.length; i++){
+        // i es el nodo destinatario
+        for (int i = 0; i < distance.length; i++) {
             System.out.println(String.format("Distance from source vertex %s to vertex %s is %s", sourceVertex, i, distance[i]));
         }
-
     }
+
+
 
     private static int findMinDistance(int[] distance, boolean[] visitedVertex) {
         int minDistance = Integer.MAX_VALUE;
@@ -69,9 +71,8 @@ public class Dijkstra_Algorithm {
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,9,0,0},
                 {0,0,0,0,4,0,0,0,0,0,0,0,0,0,9,0,9,6},
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,8},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,8,0}
-                };
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,8,0} };
         Dijkstra_Algorithm t = new Dijkstra_Algorithm();
-        t.dijkstra(graph, 0);
+        t.dijkstra(graph, 9);
     }
 }
