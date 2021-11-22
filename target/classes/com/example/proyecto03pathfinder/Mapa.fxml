@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto03pathfinder.Mapa_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto03pathfinder.Mapa_Controller">
    <children>
       <Line endX="-36.5" endY="14.5" fill="#5f1dbc" layoutX="251.0" layoutY="519.0" startX="-32.0" startY="123.0" stroke="#7c0acd" strokeWidth="5.0" />
       <Line endX="-22.5" endY="25.5" fill="#5f1dbc" layoutX="285.0" layoutY="394.0" startX="-70.5" startY="121.5" stroke="#7c0acd" strokeWidth="5.0" />
@@ -95,7 +95,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fx:id="CE" layoutX="316.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+      <Text fx:id="CE" layoutX="305.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
          <font>
             <Font size="20.0" />
          </font>
@@ -180,7 +180,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="276.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+      <Text layoutX="281.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
          <font>
             <Font size="20.0" />
          </font>
@@ -205,7 +205,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="355.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+      <Text layoutX="354.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
          <font>
             <Font size="20.0" />
          </font>
@@ -251,12 +251,16 @@
          </font>
       </Text>
       <TextField fx:id="Inicio" layoutX="776.0" layoutY="415.0" prefHeight="25.0" prefWidth="112.0" text="0" />
-      <TextField fx:id="Final" layoutX="914.0" layoutY="415.0" prefHeight="25.0" prefWidth="96.0" text="0" />
-      <Button layoutX="940.0" layoutY="462.0" mnemonicParsing="false" onMouseClicked="#Enviar" text="Agregar minutos extra" />
-      <TextField fx:id="PorAgregar" layoutX="1066.0" layoutY="416.0" prefHeight="25.0" prefWidth="85.0" text="0" />
-      <Button layoutX="968.0" layoutY="622.0" mnemonicParsing="false" text="Button" />
-      <Text layoutX="787.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# del Nodo Inicial" />
-      <Text layoutX="917.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# del Nodo Final" />
-      <Text layoutX="1066.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutos a agregar" />
+      <Button layoutX="918.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#Enviar" text="Agregar minutos extra" />
+      <Button layoutX="1072.0" layoutY="566.0" mnemonicParsing="false" onMouseClicked="#Ruta" text="Enviar ruta" />
+      <Text layoutX="785.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# del Nodo Inicial" />
+      <Text layoutX="941.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# del Nodo Final" />
+      <Text layoutX="1085.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutos a agregar" />
+      <TextField fx:id="InicioRuta" layoutX="776.0" layoutY="566.0" prefHeight="25.0" prefWidth="112.0" text="0" />
+      <TextField fx:id="FinRuta" layoutX="910.0" layoutY="566.0" prefHeight="25.0" prefWidth="112.0" text="0" />
+      <Text layoutX="797.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicio de ruta" />
+      <Text layoutX="937.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fin de ruta" />
+      <TextField fx:id="Final" layoutX="929.0" layoutY="415.0" prefHeight="25.0" prefWidth="112.0" text="0" />
+      <TextField fx:id="PorAgregar" layoutX="1078.0" layoutY="413.0" prefHeight="25.0" prefWidth="112.0" text="0" />
    </children>
 </Pane>
