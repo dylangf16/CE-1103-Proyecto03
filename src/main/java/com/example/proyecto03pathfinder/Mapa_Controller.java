@@ -80,6 +80,12 @@ public class Mapa_Controller {
     @FXML // fx:id="Inicio"
     private TextField Inicio; // Value injected by FXMLLoader
 
+    @FXML
+    private TextField InicioRuta;
+
+    @FXML
+    private TextField FinRuta;
+
     @FXML // fx:id="Final"
     private TextField Final; // Value injected by FXMLLoader
 
@@ -339,6 +345,40 @@ public class Mapa_Controller {
                         System.err.println("Error, valor invalido");
                         }
                 }
-            }
+    @FXML
+    void Ruta(MouseEvent event) {
+
+        int partida = Integer.parseInt(InicioRuta.getText());
+        int llegada = Integer.parseInt(FinRuta.getText());
+
+        int graph[][] = new int[][] { {0,73,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,27,0,4,3,3,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,3,0,0,2,0,0,0,5,0,0,0,0,0,4,0,0},
+                {0,0,3,0,2,0,6,0,0,7,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,6,0,10,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,10,0,5,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,5,0,4,0,0,0,0,0,0,0,0},
+                {0,0,0,0,5,7,0,0,4,0,3,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,3,0,4,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,4,0,18,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,18,0,9,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,9,0,10,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,9,0,0},
+                {0,0,0,0,4,0,0,0,0,0,0,0,0,0,9,0,9,6},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,8},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,8,0} };
+        Dijkstra_Algorithm t = new Dijkstra_Algorithm();
+        t.dijkstra(graph, partida, llegada);
+    }
+
+
+
+}
+
+
+
+
 
 
