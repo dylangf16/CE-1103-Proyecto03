@@ -10,28 +10,28 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto03pathfinder.Mapa_Controller">
    <children>
-      <Line endX="-36.5" endY="14.5" fill="#5f1dbc" layoutX="251.0" layoutY="519.0" startX="-32.0" startY="123.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="-22.5" endY="25.5" fill="#5f1dbc" layoutX="285.0" layoutY="394.0" startX="-70.5" startY="121.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="23.5" endY="45.0" fill="#5f1dbc" layoutX="238.0" layoutY="370.0" startX="-111.5" startY="96.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="35.0" endY="-77.5" fill="#5f1dbc" layoutX="248.0" layoutY="380.0" startX="15.5" startY="36.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="22.8828125" endY="-86.28125" fill="#5f1dbc" layoutX="258.0" layoutY="390.0" startX="103.5" startY="11.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="-133.5" endY="-151.5" fill="#5f1dbc" layoutX="268.0" layoutY="400.0" startX="15.0" startY="-97.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="-147.0" endY="-165.03553771972656" fill="#5f1dbc" layoutX="281.0" layoutY="410.0" startX="89.0" startY="-279.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="133.5" endY="-205.5" fill="#5f1dbc" layoutX="291.0" layoutY="420.0" startX="81.5" startY="-289.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="182.0" endY="-133.0" fill="#5f1dbc" layoutX="301.0" layoutY="430.0" startX="119.0" startY="-222.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="173.0" endY="-145.5" fill="#5f1dbc" layoutX="311.0" layoutY="440.0" startX="-26.5" startY="-139.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="162.0" endY="-155.0" fill="#5f1dbc" layoutX="321.0" layoutY="450.0" startX="38.0" startY="-51.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="167.0" endY="21.0" fill="#5f1dbc" layoutX="331.0" layoutY="460.0" startX="28.0" startY="-62.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="340.5" endY="-158.0" fill="#5f1dbc" layoutX="341.0" layoutY="470.0" startX="154.0" startY="8.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="348.0" endY="51.0" fill="#5f1dbc" layoutX="351.0" layoutY="480.0" startX="145.0" startY="-3.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="213.0" endY="141.0" fill="#5f1dbc" layoutX="361.0" layoutY="490.0" startX="135.0" startY="-10.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="201.0" endY="133.5" fill="#5f1dbc" layoutX="371.0" layoutY="500.0" startX="326.5" startY="30.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="245.5" endY="-174.0" fill="#5f1dbc" layoutX="321.0" layoutY="450.0" startX="160.0" startY="-154.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="352.0" endY="-233.0" fill="#5f1dbc" layoutX="331.0" layoutY="460.0" startX="233.5" startY="-183.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="724.0" endY="-262.5" fill="#5f1dbc" layoutX="341.0" layoutY="470.0" startX="341.5" startY="-245.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="714.0" endY="-268.0" fill="#5f1dbc" layoutX="351.0" layoutY="480.0" startX="515.5" startY="-228.5" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="504.5" endY="-238.5" fill="#5f1dbc" layoutX="361.0" layoutY="490.0" startX="318.0" startY="-179.0" stroke="#7c0acd" strokeWidth="5.0" />
-      <Line endX="-6.0" endY="17.0" fill="#5f1dbc" layoutX="268.0" layoutY="400.0" startX="90.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="ceroauno" endX="-36.5" endY="14.5" fill="#5f1dbc" layoutX="251.0" layoutY="519.0" startX="-32.0" startY="123.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="unoados" endX="-22.5" endY="25.5" fill="#5f1dbc" layoutX="285.0" layoutY="394.0" startX="-70.5" startY="121.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="dosatres" endX="23.5" endY="45.0" fill="#5f1dbc" layoutX="238.0" layoutY="370.0" startX="-111.5" startY="96.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="dosacinco" endX="35.0" endY="-77.5" fill="#5f1dbc" layoutX="248.0" layoutY="380.0" startX="15.5" startY="36.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="cuatroacinco" endX="22.8828125" endY="-86.28125" fill="#5f1dbc" layoutX="258.0" layoutY="390.0" startX="103.5" startY="11.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="cincoaseis" endX="-133.5" endY="-151.5" fill="#5f1dbc" layoutX="268.0" layoutY="400.0" startX="15.0" startY="-97.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="seisasiete" endX="-147.0" endY="-165.03553771972656" fill="#5f1dbc" layoutX="281.0" layoutY="410.0" startX="89.0" startY="-279.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="sieteaocho" endX="133.5" endY="-205.5" fill="#5f1dbc" layoutX="291.0" layoutY="420.0" startX="81.5" startY="-289.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="ochoanueve" endX="182.0" endY="-133.0" fill="#5f1dbc" layoutX="301.0" layoutY="430.0" startX="119.0" startY="-222.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="cincoanueve" endX="173.0" endY="-145.5" fill="#5f1dbc" layoutX="311.0" layoutY="440.0" startX="-26.5" startY="-139.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="cuatroanueve" endX="162.0" endY="-155.0" fill="#5f1dbc" layoutX="321.0" layoutY="450.0" startX="38.0" startY="-51.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="cuatroaquince" endX="167.0" endY="21.0" fill="#5f1dbc" layoutX="331.0" layoutY="460.0" startX="28.0" startY="-62.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="catorceaquince" endX="340.5" endY="-158.0" fill="#5f1dbc" layoutX="341.0" layoutY="470.0" startX="154.0" startY="8.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="quinceadieciseis" endX="348.0" endY="51.0" fill="#5f1dbc" layoutX="351.0" layoutY="480.0" startX="145.0" startY="-3.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="quinceadiecisiete" endX="213.0" endY="141.0" fill="#5f1dbc" layoutX="361.0" layoutY="490.0" startX="135.0" startY="-10.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="dieciseisadiecisiete" endX="201.0" endY="133.5" fill="#5f1dbc" layoutX="371.0" layoutY="500.0" startX="326.5" startY="30.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="nueveadiez" endX="245.5" endY="-174.0" fill="#5f1dbc" layoutX="321.0" layoutY="450.0" startX="160.0" startY="-154.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="diaezaonce" endX="352.0" endY="-233.0" fill="#5f1dbc" layoutX="331.0" layoutY="460.0" startX="233.5" startY="-183.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="onceadoce" endX="724.0" endY="-262.5" fill="#5f1dbc" layoutX="341.0" layoutY="470.0" startX="341.5" startY="-245.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="doceatrece" endX="714.0" endY="-268.0" fill="#5f1dbc" layoutX="351.0" layoutY="480.0" startX="515.5" startY="-228.5" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="treceacatorce" endX="504.5" endY="-238.5" fill="#5f1dbc" layoutX="361.0" layoutY="490.0" startX="318.0" startY="-179.0" stroke="#7c0acd" strokeWidth="5.0" />
+      <Line fx:id="dosacuatro" endX="-6.0" endY="17.0" fill="#5f1dbc" layoutX="268.0" layoutY="400.0" startX="90.5" stroke="#7c0acd" strokeWidth="5.0" />
       <Circle fill="#008eff" layoutX="123.0" layoutY="467.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#008eff" layoutX="264.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#008eff" layoutX="212.0" layoutY="520.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />

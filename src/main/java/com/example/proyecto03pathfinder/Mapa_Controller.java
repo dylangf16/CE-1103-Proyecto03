@@ -7,6 +7,8 @@ package com.example.proyecto03pathfinder;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
 public class Mapa_Controller {
@@ -91,6 +93,9 @@ public class Mapa_Controller {
 
     @FXML // fx:id="PorAgregar"
     private TextField PorAgregar; // Value injected by FXMLLoader
+
+    @FXML // fx:id="ceroauno"
+    private Line ceroauno; // Value injected by FXMLLoader
 
 
     @FXML
@@ -371,6 +376,7 @@ public class Mapa_Controller {
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,8,0} };
         Dijkstra_Algorithm t = new Dijkstra_Algorithm();
         t.dijkstra(graph, partida, llegada);
+        //ceroauno.setStroke(Paint.valueOf("BLACK"));
     }
 
 
