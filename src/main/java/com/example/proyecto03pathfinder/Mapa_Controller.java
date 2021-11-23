@@ -5,6 +5,7 @@
 package com.example.proyecto03pathfinder;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
@@ -94,8 +95,8 @@ public class Mapa_Controller {
     @FXML // fx:id="PorAgregar"
     private TextField PorAgregar; // Value injected by FXMLLoader
 
-    @FXML // fx:id="ceroauno"
-    private Line ceroauno; // Value injected by FXMLLoader
+    @FXML // fx:id="textoruta"
+    private Label textoruta; // Value injected by FXMLLoader
 
 
     @FXML
@@ -225,7 +226,8 @@ public class Mapa_Controller {
             } else {
                 System.err.println("Valor invalido");
             }
-        } if (source == 2 || source == 4 || source == 5 || source == 9 || source == 15){
+        }
+        if (source == 2 || source == 4 || source == 5 || source == 9 || source == 15) {
             //Minutos extra de 2 a 1,3,4 o 5
             if (source == 2) {
                 if (arrival == 1) {
@@ -275,108 +277,108 @@ public class Mapa_Controller {
                     FJ.setText(String.valueOf(total));
                 }
             }
-                //Minutos extra de 4 a 2,5,9,15
-                if (source == 4) {
-                    if (arrival == 2) {
-                        int total = Integer.parseInt(CE.getText());
-                        total += Integer.parseInt(PorAgregar.getText());
-                        CE.setText(String.valueOf(total));
-                    }
-                    if (arrival == 5) {
-                        int total = Integer.parseInt(FE.getText());
-                        total += Integer.parseInt(PorAgregar.getText());
-                        FE.setText(String.valueOf(total));
-                    }
-                    if (arrival == 9) {
-                        int total = Integer.parseInt(JE.getText());
-                        total += Integer.parseInt(PorAgregar.getText());
-                        JE.setText(String.valueOf(total));
-                    }
-                    if (arrival == 15) {
-                        int total = Integer.parseInt(OE.getText());
-                        total += Integer.parseInt(PorAgregar.getText());
-                        OE.setText(String.valueOf(total));
-                    }
+            //Minutos extra de 4 a 2,5,9,15
+            if (source == 4) {
+                if (arrival == 2) {
+                    int total = Integer.parseInt(CE.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    CE.setText(String.valueOf(total));
                 }
-                    //Minutos extra de 9 a 4,5,8,10
-                    if (source == 9) {
-                        if (arrival == 4) {
-                            int total = Integer.parseInt(JE.getText());
-                            total += Integer.parseInt(PorAgregar.getText());
-                            JE.setText(String.valueOf(total));
-                        }
-                        if (arrival == 5) {
-                            int total = Integer.parseInt(FJ.getText());
-                            total += Integer.parseInt(PorAgregar.getText());
-                            FJ.setText(String.valueOf(total));
-                        }
-                        if (arrival == 8) {
-                            int total = Integer.parseInt(IJ.getText());
-                            total += Integer.parseInt(PorAgregar.getText());
-                            IJ.setText(String.valueOf(total));
-                        }
-                        if (arrival == 10) {
-                            int total = Integer.parseInt(JK.getText());
-                            total += Integer.parseInt(PorAgregar.getText());
-                            JK.setText(String.valueOf(total));
-                        }
-                    }
-
-                        //Minutos extra de 15 a 4,14,16,17
-                        if (source == 15) {
-                            if (arrival == 4) {
-                                int total = Integer.parseInt(OE.getText());
-                                total += Integer.parseInt(PorAgregar.getText());
-                                OE.setText(String.valueOf(total));
-                            }
-                            if (arrival == 14) {
-                                int total = Integer.parseInt(ÑO.getText());
-                                total += Integer.parseInt(PorAgregar.getText());
-                                ÑO.setText(String.valueOf(total));
-                            }
-                            if (arrival == 16) {
-                                int total = Integer.parseInt(OP.getText());
-                                total += Integer.parseInt(PorAgregar.getText());
-                                OP.setText(String.valueOf(total));
-                            }
-                            if (arrival == 17) {
-                                int total = Integer.parseInt(QO.getText());
-                                total += Integer.parseInt(PorAgregar.getText());
-                                QO.setText(String.valueOf(total));
-                            }
-                        }
-                    }
-                    else{
-                        System.err.println("Error, valor invalido");
-                        }
+                if (arrival == 5) {
+                    int total = Integer.parseInt(FE.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    FE.setText(String.valueOf(total));
                 }
+                if (arrival == 9) {
+                    int total = Integer.parseInt(JE.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    JE.setText(String.valueOf(total));
+                }
+                if (arrival == 15) {
+                    int total = Integer.parseInt(OE.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    OE.setText(String.valueOf(total));
+                }
+            }
+            //Minutos extra de 9 a 4,5,8,10
+            if (source == 9) {
+                if (arrival == 4) {
+                    int total = Integer.parseInt(JE.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    JE.setText(String.valueOf(total));
+                }
+                if (arrival == 5) {
+                    int total = Integer.parseInt(FJ.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    FJ.setText(String.valueOf(total));
+                }
+                if (arrival == 8) {
+                    int total = Integer.parseInt(IJ.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    IJ.setText(String.valueOf(total));
+                }
+                if (arrival == 10) {
+                    int total = Integer.parseInt(JK.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    JK.setText(String.valueOf(total));
+                }
+            }
+            //Minutos extra de 15 a 4,14,16,17
+            if (source == 15) {
+                if (arrival == 4) {
+                    int total = Integer.parseInt(OE.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    OE.setText(String.valueOf(total));
+                }
+                if (arrival == 14) {
+                    int total = Integer.parseInt(ÑO.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    ÑO.setText(String.valueOf(total));
+                }
+                if (arrival == 16) {
+                    int total = Integer.parseInt(OP.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    OP.setText(String.valueOf(total));
+                }
+                if (arrival == 17) {
+                    int total = Integer.parseInt(QO.getText());
+                    total += Integer.parseInt(PorAgregar.getText());
+                    QO.setText(String.valueOf(total));
+                }
+            }
+        }
+    else{
+        System.err.println("Error, valor invalido");
+        }
+    }
     @FXML
     void Ruta(MouseEvent event) {
 
         int partida = Integer.parseInt(InicioRuta.getText());
         int llegada = Integer.parseInt(FinRuta.getText());
 
-        int graph[][] = new int[][] { {0,73,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,27,0,4,3,3,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,3,0,0,2,0,0,0,5,0,0,0,0,0,4,0,0},
-                {0,0,3,0,2,0,6,0,0,7,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,6,0,10,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,10,0,5,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,5,0,4,0,0,0,0,0,0,0,0},
-                {0,0,0,0,5,7,0,0,4,0,3,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,3,0,4,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,4,0,18,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,18,0,9,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,9,0,10,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,9,0,0},
-                {0,0,0,0,4,0,0,0,0,0,0,0,0,0,9,0,9,6},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,8},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,8,0} };
+        int graph[][] = new int[][] {
+                {0,Integer.parseInt(AB.getText()),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {Integer.parseInt(AB.getText()),0,Integer.parseInt(BC.getText()),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,Integer.parseInt(BC.getText()),0,Integer.parseInt(CD.getText()),Integer.parseInt(CE.getText()),Integer.parseInt(CF.getText()),0,0,0,0,0,0,0,0,0,0,0,0},
+               {0,0,Integer.parseInt(CD.getText()),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+               {0,0,Integer.parseInt(CE.getText()),0,0,Integer.parseInt(FE.getText()),0,0,0,Integer.parseInt(JE.getText()),0,0,0,0,0,Integer.parseInt(OE.getText()),0,0},
+               {0,0,Integer.parseInt(CF.getText()),0,Integer.parseInt(FE.getText()),0,Integer.parseInt(FG.getText()),0,0,Integer.parseInt(FJ.getText()),0,0,0,0,0,0,0,0},
+               {0,0,0,0,0,Integer.parseInt(FG.getText()),0,Integer.parseInt(GH.getText()),0,0,0,0,0,0,0,0,0,0},
+               {0,0,0,0,0,0,Integer.parseInt(GH.getText()),0,Integer.parseInt(HI.getText()),0,0,0,0,0,0,0,0,0},
+               {0,0,0,0,0,0,0,Integer.parseInt(HI.getText()),0,Integer.parseInt(IJ.getText()),0,0,0,0,0,0,0,0},
+               {0,0,0,0,Integer.parseInt(JE.getText()),Integer.parseInt(FJ.getText()),0,0,Integer.parseInt(IJ.getText()),0,Integer.parseInt(JK.getText()),0,0,0,0,0,0,0},
+               {0,0,0,0,0,0,0,0,0,Integer.parseInt(JK.getText()),0,Integer.parseInt(KL.getText()),0,0,0,0,0,0},
+               {0,0,0,0,0,0,0,0,0,0,Integer.parseInt(KL.getText()),0,Integer.parseInt(LM.getText()),0,0,0,0,0},
+               {0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(LM.getText()),0,Integer.parseInt(MN.getText()),0,0,0,0},
+               {0,0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(MN.getText()),0,Integer.parseInt(NÑ.getText()),0,0,0},
+               {0,0,0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(NÑ.getText()),0,Integer.parseInt(ÑO.getText()),0,0},
+               {0,0,0,0,Integer.parseInt(OE.getText()),0,0,0,0,0,0,0,0,0,Integer.parseInt(ÑO.getText()),0,Integer.parseInt(OP.getText()),Integer.parseInt(QO.getText())},
+               {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(OP.getText()),0,Integer.parseInt(PQ.getText())},
+               {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(QO.getText()),Integer.parseInt(PQ.getText()),0} };
         Dijkstra_Algorithm t = new Dijkstra_Algorithm();
         t.dijkstra(graph, partida, llegada);
-        //ceroauno.setStroke(Paint.valueOf("BLACK"));
+        textoruta.setText(String.valueOf(t.mostrartexto()));
     }
 
 

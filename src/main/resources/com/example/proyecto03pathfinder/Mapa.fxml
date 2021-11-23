@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
@@ -251,16 +252,17 @@
          </font>
       </Text>
       <TextField fx:id="Inicio" layoutX="776.0" layoutY="415.0" prefHeight="25.0" prefWidth="112.0" text="0" />
-      <Button layoutX="918.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#Enviar" text="Agregar minutos extra" />
-      <Button layoutX="1072.0" layoutY="566.0" mnemonicParsing="false" onMouseClicked="#Ruta" text="Enviar ruta" />
+      <Button layoutX="907.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#Enviar" text="Agregar minutos extra" />
+      <Button layoutX="1056.0" layoutY="566.0" mnemonicParsing="false" onMouseClicked="#Ruta" text="Enviar ruta" />
       <Text layoutX="785.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# del Nodo Inicial" />
-      <Text layoutX="941.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# del Nodo Final" />
-      <Text layoutX="1085.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutos a agregar" />
+      <Text layoutX="930.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# del Nodo Final" />
+      <Text layoutX="1059.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutos a agregar" />
       <TextField fx:id="InicioRuta" layoutX="776.0" layoutY="566.0" prefHeight="25.0" prefWidth="112.0" text="0" />
-      <TextField fx:id="FinRuta" layoutX="910.0" layoutY="566.0" prefHeight="25.0" prefWidth="112.0" text="0" />
+      <TextField fx:id="FinRuta" layoutX="911.0" layoutY="566.0" prefHeight="25.0" prefWidth="112.0" text="0" />
       <Text layoutX="797.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicio de ruta" />
       <Text layoutX="937.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fin de ruta" />
-      <TextField fx:id="Final" layoutX="929.0" layoutY="415.0" prefHeight="25.0" prefWidth="112.0" text="0" />
-      <TextField fx:id="PorAgregar" layoutX="1078.0" layoutY="413.0" prefHeight="25.0" prefWidth="112.0" text="0" />
+      <TextField fx:id="Final" layoutX="918.0" layoutY="416.0" prefHeight="25.0" prefWidth="112.0" text="0" />
+      <TextField fx:id="PorAgregar" layoutX="1052.0" layoutY="416.0" prefHeight="25.0" prefWidth="112.0" text="0" />
+      <Label fx:id="textoruta" alignment="CENTER" layoutX="775.0" layoutY="621.0" prefHeight="17.0" prefWidth="397.0" text="" />
    </children>
 </Pane>

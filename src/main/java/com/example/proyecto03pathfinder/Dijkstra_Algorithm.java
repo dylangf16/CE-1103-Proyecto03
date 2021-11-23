@@ -1,12 +1,14 @@
 package com.example.proyecto03pathfinder;
 
-public class Dijkstra_Algorithm {
+import java.util.ArrayList;
 
+public class Dijkstra_Algorithm {
+    public static String texto="";
     public static void dijkstra(int[][] graph, int sourceVertex, int arrival){
-        if (arrival == 0){
-            arrival = sourceVertex;
-            sourceVertex = 0;
-        }
+        /*if (arrival == 0){
+          //  arrival = sourceVertex;
+           // sourceVertex = 0;
+        }*/
         int vertexCount = graph.length;
         boolean[] visitedVertex = new boolean[vertexCount];
         int[] distance = new int[vertexCount];
@@ -27,7 +29,6 @@ public class Dijkstra_Algorithm {
 
             for (int v =0 ; v < vertexCount; v++){
                 //graph[u][v] != 0 -> there should be a direct edge
-
                 if(!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])){
                     distance[v] = distance[u] + graph[u][v];
                 }
@@ -35,7 +36,11 @@ public class Dijkstra_Algorithm {
         }
 
         int i = arrival;
-        System.out.println(String.format("Distance from source vertex %s to vertex %s is %s", sourceVertex, i, distance[i]));
+        //System.out.println(String.format("Distance from source vertex %s to vertex %s is %s", sourceVertex, i, distance[i]));
+        texto = String.format("La distancia del vertice %s al vertice %s es %s", sourceVertex, i, distance[i]);
+    }
+    public String mostrartexto(){
+        return texto;
     }
 
     private static int findMinDistance(int[] distance, boolean[] visitedVertex) {
@@ -55,8 +60,9 @@ public class Dijkstra_Algorithm {
     //El error solamente surge cuando va de X a 0
     //TODO hacerlo invertido, en vez de X a 0, de 0 a X
     public static void main(String[] args) {
-        int graph[][] = new int[][] { {0,73,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        int graph[][] = new int[][] {
+                {0,73,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {73,0,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,27,0,4,3,3,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,3,0,0,2,0,0,0,5,0,0,0,0,0,4,0,0},
