@@ -3,42 +3,52 @@ package com.example.proyecto03pathfinder;
 import java.util.ArrayList;
 
 public class Dijkstra_Algorithm {
-    public static String texto="";
-    public static void dijkstra(int[][] graph, int sourceVertex, int arrival){
+
+        public static String texto = "";
+        public static void dijkstra ( int[][] graph, int sourceVertex, int arrival) {
         /*if (arrival == 0){
           //  arrival = sourceVertex;
            // sourceVertex = 0;
         }*/
-        int vertexCount = graph.length;
-        boolean[] visitedVertex = new boolean[vertexCount];
-        int[] distance = new int[vertexCount];
-        for (int i = 0; i < vertexCount; i++){
-            visitedVertex[i] = false;
-            distance[i] = Integer.MAX_VALUE;
-        }
-        distance[sourceVertex] = 0; // distance of source vertex to itself is zero
-        for (int i = 0; i < vertexCount; i++){
-            //find the neighbouring unvisited vertex having  minimum distance from source vertex
-            //for the first time u will be the source vertex and the distance array will be updated with the neighbouring vertex distance of source vertex
+            try {
+                if (sourceVertex>=0 && sourceVertex<=17 && arrival>=0 && arrival<=17) {
+                    int vertexCount = graph.length;
+                    boolean[] visitedVertex = new boolean[vertexCount];
+                    int[] distance = new int[vertexCount];
 
-            int u = findMinDistance(distance, visitedVertex);
-            //u is the row and v is the column
 
-            visitedVertex[u] = true;
-            //now update all the neighbour vertex distances
+                    for (int i = 0; i < vertexCount; i++) {
+                        visitedVertex[i] = false;
+                        distance[i] = Integer.MAX_VALUE;
+                    }
+                    distance[sourceVertex] = 0; // distance of source vertex to itself is zero
+                    for (int i = 0; i < vertexCount; i++) {
+                        //find the neighbouring unvisited vertex having  minimum distance from source vertex
+                        //for the first time u will be the source vertex and the distance array will be updated with the neighbouring vertex distance of source vertex
 
-            for (int v =0 ; v < vertexCount; v++){
-                //graph[u][v] != 0 -> there should be a direct edge
-                if(!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])){
-                    distance[v] = distance[u] + graph[u][v];
+                        int u = findMinDistance(distance, visitedVertex);
+                        //u is the row and v is the column
+
+                        visitedVertex[u] = true;
+                        //now update all the neighbour vertex distances
+
+                        for (int v = 0; v < vertexCount; v++) {
+                            //graph[u][v] != 0 -> there should be a direct edge
+                            if (!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])) {
+                                distance[v] = distance[u] + graph[u][v];
+                            }
+                        }
+                    }
+
+                    int i = arrival;
+                    //System.out.println(String.format("Distance from source vertex %s to vertex %s is %s", sourceVertex, i, distance[i]));
+                    texto = String.format("La distancia del vertice %s al vertice %s es %s", sourceVertex, i, distance[i]);
                 }
+
+            } catch (Exception e) {
+                System.out.println("La ruta ingresada no es valida");
             }
         }
-
-        int i = arrival;
-        //System.out.println(String.format("Distance from source vertex %s to vertex %s is %s", sourceVertex, i, distance[i]));
-        texto = String.format("La distancia del vertice %s al vertice %s es %s", sourceVertex, i, distance[i]);
-    }
     public String mostrartexto(){
         return texto;
     }

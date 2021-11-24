@@ -371,33 +371,31 @@ public class Mapa_Controller {
         int partida = Integer.parseInt(InicioRuta.getText());
         int llegada = Integer.parseInt(FinRuta.getText());
 
-        int graph[][] = new int[][] {
-                {0,Integer.parseInt(AB.getText()),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {Integer.parseInt(AB.getText()),0,Integer.parseInt(BC.getText()),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,Integer.parseInt(BC.getText()),0,Integer.parseInt(CD.getText()),Integer.parseInt(CE.getText()),Integer.parseInt(CF.getText()),0,0,0,0,0,0,0,0,0,0,0,0},
-               {0,0,Integer.parseInt(CD.getText()),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-               {0,0,Integer.parseInt(CE.getText()),0,0,Integer.parseInt(FE.getText()),0,0,0,Integer.parseInt(JE.getText()),0,0,0,0,0,Integer.parseInt(OE.getText()),0,0},
-               {0,0,Integer.parseInt(CF.getText()),0,Integer.parseInt(FE.getText()),0,Integer.parseInt(FG.getText()),0,0,Integer.parseInt(FJ.getText()),0,0,0,0,0,0,0,0},
-               {0,0,0,0,0,Integer.parseInt(FG.getText()),0,Integer.parseInt(GH.getText()),0,0,0,0,0,0,0,0,0,0},
-               {0,0,0,0,0,0,Integer.parseInt(GH.getText()),0,Integer.parseInt(HI.getText()),0,0,0,0,0,0,0,0,0},
-               {0,0,0,0,0,0,0,Integer.parseInt(HI.getText()),0,Integer.parseInt(IJ.getText()),0,0,0,0,0,0,0,0},
-               {0,0,0,0,Integer.parseInt(JE.getText()),Integer.parseInt(FJ.getText()),0,0,Integer.parseInt(IJ.getText()),0,Integer.parseInt(JK.getText()),0,0,0,0,0,0,0},
-               {0,0,0,0,0,0,0,0,0,Integer.parseInt(JK.getText()),0,Integer.parseInt(KL.getText()),0,0,0,0,0,0},
-               {0,0,0,0,0,0,0,0,0,0,Integer.parseInt(KL.getText()),0,Integer.parseInt(LM.getText()),0,0,0,0,0},
-               {0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(LM.getText()),0,Integer.parseInt(MN.getText()),0,0,0,0},
-               {0,0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(MN.getText()),0,Integer.parseInt(NÑ.getText()),0,0,0},
-               {0,0,0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(NÑ.getText()),0,Integer.parseInt(ÑO.getText()),0,0},
-               {0,0,0,0,Integer.parseInt(OE.getText()),0,0,0,0,0,0,0,0,0,Integer.parseInt(ÑO.getText()),0,Integer.parseInt(OP.getText()),Integer.parseInt(QO.getText())},
-               {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(OP.getText()),0,Integer.parseInt(PQ.getText())},
-               {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Integer.parseInt(QO.getText()),Integer.parseInt(PQ.getText()),0} };
+        int graph[][] = new int[][]{
+                {0, Integer.parseInt(AB.getText()), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {Integer.parseInt(AB.getText()), 0, Integer.parseInt(BC.getText()), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, Integer.parseInt(BC.getText()), 0, Integer.parseInt(CD.getText()), Integer.parseInt(CE.getText()), Integer.parseInt(CF.getText()), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, Integer.parseInt(CD.getText()), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, Integer.parseInt(CE.getText()), 0, 0, Integer.parseInt(FE.getText()), 0, 0, 0, Integer.parseInt(JE.getText()), 0, 0, 0, 0, 0, Integer.parseInt(OE.getText()), 0, 0},
+                {0, 0, Integer.parseInt(CF.getText()), 0, Integer.parseInt(FE.getText()), 0, Integer.parseInt(FG.getText()), 0, 0, Integer.parseInt(FJ.getText()), 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, Integer.parseInt(FG.getText()), 0, Integer.parseInt(GH.getText()), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, Integer.parseInt(GH.getText()), 0, Integer.parseInt(HI.getText()), 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, Integer.parseInt(HI.getText()), 0, Integer.parseInt(IJ.getText()), 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, Integer.parseInt(JE.getText()), Integer.parseInt(FJ.getText()), 0, 0, Integer.parseInt(IJ.getText()), 0, Integer.parseInt(JK.getText()), 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, Integer.parseInt(JK.getText()), 0, Integer.parseInt(KL.getText()), 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Integer.parseInt(KL.getText()), 0, Integer.parseInt(LM.getText()), 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Integer.parseInt(LM.getText()), 0, Integer.parseInt(MN.getText()), 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Integer.parseInt(MN.getText()), 0, Integer.parseInt(NÑ.getText()), 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Integer.parseInt(NÑ.getText()), 0, Integer.parseInt(ÑO.getText()), 0, 0},
+                {0, 0, 0, 0, Integer.parseInt(OE.getText()), 0, 0, 0, 0, 0, 0, 0, 0, 0, Integer.parseInt(ÑO.getText()), 0, Integer.parseInt(OP.getText()), Integer.parseInt(QO.getText())},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Integer.parseInt(OP.getText()), 0, Integer.parseInt(PQ.getText())},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Integer.parseInt(QO.getText()), Integer.parseInt(PQ.getText()), 0}};
         Dijkstra_Algorithm t = new Dijkstra_Algorithm();
         t.dijkstra(graph, partida, llegada);
         textoruta.setText(String.valueOf(t.mostrartexto()));
     }
-
-
-
 }
+
 
 
 
