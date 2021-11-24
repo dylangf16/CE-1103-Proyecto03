@@ -1,41 +1,56 @@
 package com.example.proyecto03pathfinder;
 
+import java.util.ArrayList;
+
 public class Dijkstra_Algorithm {
 
-    public static void dijkstra(int[][] graph, int sourceVertex, int arrival){
-        if (arrival == 0){
-            arrival = sourceVertex;
-            sourceVertex = 0;
-        }
-        int vertexCount = graph.length;
-        boolean[] visitedVertex = new boolean[vertexCount];
-        int[] distance = new int[vertexCount];
-        for (int i = 0; i < vertexCount; i++){
-            visitedVertex[i] = false;
-            distance[i] = Integer.MAX_VALUE;
-        }
-        distance[sourceVertex] = 0; // distance of source vertex to itself is zero
-        for (int i = 0; i < vertexCount; i++){
-            //find the neighbouring unvisited vertex having  minimum distance from source vertex
-            //for the first time u will be the source vertex and the distance array will be updated with the neighbouring vertex distance of source vertex
+        public static String texto = "";
+        public static void dijkstra ( int[][] graph, int sourceVertex, int arrival) {
+        /*if (arrival == 0){
+          //  arrival = sourceVertex;
+           // sourceVertex = 0;
+        }*/
+            try {
+                if (sourceVertex>=0 && sourceVertex<=17 && arrival>=0 && arrival<=17) {
+                    int vertexCount = graph.length;
+                    boolean[] visitedVertex = new boolean[vertexCount];
+                    int[] distance = new int[vertexCount];
 
-            int u = findMinDistance(distance, visitedVertex);
-            //u is the row and v is the column
 
-            visitedVertex[u] = true;
-            //now update all the neighbour vertex distances
+                    for (int i = 0; i < vertexCount; i++) {
+                        visitedVertex[i] = false;
+                        distance[i] = Integer.MAX_VALUE;
+                    }
+                    distance[sourceVertex] = 0; // distance of source vertex to itself is zero
+                    for (int i = 0; i < vertexCount; i++) {
+                        //find the neighbouring unvisited vertex having  minimum distance from source vertex
+                        //for the first time u will be the source vertex and the distance array will be updated with the neighbouring vertex distance of source vertex
 
-            for (int v =0 ; v < vertexCount; v++){
-                //graph[u][v] != 0 -> there should be a direct edge
+                        int u = findMinDistance(distance, visitedVertex);
+                        //u is the row and v is the column
 
-                if(!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])){
-                    distance[v] = distance[u] + graph[u][v];
+                        visitedVertex[u] = true;
+                        //now update all the neighbour vertex distances
+
+                        for (int v = 0; v < vertexCount; v++) {
+                            //graph[u][v] != 0 -> there should be a direct edge
+                            if (!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])) {
+                                distance[v] = distance[u] + graph[u][v];
+                            }
+                        }
+                    }
+
+                    int i = arrival;
+                    //System.out.println(String.format("Distance from source vertex %s to vertex %s is %s", sourceVertex, i, distance[i]));
+                    texto = String.format("La distancia del vertice %s al vertice %s es %s", sourceVertex, i, distance[i]);
                 }
+
+            } catch (Exception e) {
+                System.out.println("La ruta ingresada no es valida");
             }
         }
-
-        int i = arrival;
-        System.out.println(String.format("Distance from source vertex %s to vertex %s is %s", sourceVertex, i, distance[i]));
+    public String mostrartexto(){
+        return texto;
     }
 
     private static int findMinDistance(int[] distance, boolean[] visitedVertex) {
@@ -55,8 +70,9 @@ public class Dijkstra_Algorithm {
     //El error solamente surge cuando va de X a 0
     //TODO hacerlo invertido, en vez de X a 0, de 0 a X
     public static void main(String[] args) {
-        int graph[][] = new int[][] { {0,73,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        int graph[][] = new int[][] {
+                {0,73,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {73,0,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,27,0,4,3,3,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,3,0,0,2,0,0,0,5,0,0,0,0,0,4,0,0},
