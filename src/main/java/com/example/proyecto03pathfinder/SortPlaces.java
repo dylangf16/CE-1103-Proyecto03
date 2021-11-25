@@ -155,6 +155,8 @@ public class SortPlaces {
             System.out.println("Va " + i);
             Node temp = Nodes.find(placesList[i]);
             temp.setPlace(i);
+            Nodes.delete(temp.Lugar);
+            temp.next = null;
             sortedNodes.insert(temp);
         }
         return sortedNodes;

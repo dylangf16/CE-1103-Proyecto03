@@ -31,7 +31,7 @@ public class LinkedList {
     public Node find(String searchValue) {
         Node current = this.head;
         while (current != null) {
-            if (current.Lugar.equals(searchValue)) {
+            if (current.Lugar == searchValue) {
                 return current;
             } else {
                 current = current.getNext();

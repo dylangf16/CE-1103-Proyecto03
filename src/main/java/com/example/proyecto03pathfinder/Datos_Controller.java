@@ -38,27 +38,30 @@ public class Datos_Controller implements Initializable {
     private TableColumn<Plc,String> col_gasPlace;
 
     LinkedList places = SortPlaces.sortNodes();
-
+    String[] sortedPlaces = SortPlaces.SortedPlaces();
 
     ObservableList list = FXCollections.observableArrayList(
-            new Plc(places.findPlace(0).Lugar, places.findPlace(0).Habitantes, places.findPlace(0).L_interes, places.findPlace(0).L_comida, places.findPlace(0).Gasolineras),
-            new Plc(places.findPlace(1).Lugar, places.findPlace(1).Habitantes, places.findPlace(1).L_interes, places.findPlace(1).L_comida, places.findPlace(1).Gasolineras),
-            new Plc(places.findPlace(2).Lugar, places.findPlace(2).Habitantes, places.findPlace(2).L_interes, places.findPlace(2).L_comida, places.findPlace(2).Gasolineras),
-            new Plc(places.findPlace(3).Lugar, places.findPlace(3).Habitantes, places.findPlace(3).L_interes, places.findPlace(3).L_comida, places.findPlace(3).Gasolineras),
-            new Plc(places.findPlace(4).Lugar, places.findPlace(4).Habitantes, places.findPlace(4).L_interes, places.findPlace(4).L_comida, places.findPlace(4).Gasolineras),
-            new Plc(places.findPlace(5).Lugar, places.findPlace(5).Habitantes, places.findPlace(5).L_interes, places.findPlace(5).L_comida, places.findPlace(5).Gasolineras),
-            new Plc(places.findPlace(6).Lugar, places.findPlace(6).Habitantes, places.findPlace(6).L_interes, places.findPlace(6).L_comida, places.findPlace(6).Gasolineras),
-            new Plc(places.findPlace(7).Lugar, places.findPlace(7).Habitantes, places.findPlace(7).L_interes, places.findPlace(7).L_comida, places.findPlace(7).Gasolineras),
-            new Plc(places.findPlace(8).Lugar, places.findPlace(8).Habitantes, places.findPlace(8).L_interes, places.findPlace(8).L_comida, places.findPlace(8).Gasolineras),
-            new Plc(places.findPlace(9).Lugar, places.findPlace(9).Habitantes, places.findPlace(9).L_interes, places.findPlace(9).L_comida, places.findPlace(9).Gasolineras),
-            new Plc(places.findPlace(10).Lugar, places.findPlace(10).Habitantes, places.findPlace(10).L_interes, places.findPlace(10).L_comida, places.findPlace(10).Gasolineras),
-            new Plc(places.findPlace(11).Lugar, places.findPlace(11).Habitantes, places.findPlace(11).L_interes, places.findPlace(11).L_comida, places.findPlace(11).Gasolineras),
-            new Plc(places.findPlace(12).Lugar, places.findPlace(12).Habitantes, places.findPlace(12).L_interes, places.findPlace(12).L_comida, places.findPlace(12).Gasolineras),
-            new Plc(places.findPlace(13).Lugar, places.findPlace(13).Habitantes, places.findPlace(13).L_interes, places.findPlace(13).L_comida, places.findPlace(13).Gasolineras),
-            new Plc(places.findPlace(14).Lugar, places.findPlace(14).Habitantes, places.findPlace(14).L_interes, places.findPlace(14).L_comida, places.findPlace(14).Gasolineras),
-            new Plc(places.findPlace(15).Lugar, places.findPlace(15).Habitantes, places.findPlace(15).L_interes, places.findPlace(15).L_comida, places.findPlace(15).Gasolineras),
-            new Plc(places.findPlace(16).Lugar, places.findPlace(16).Habitantes, places.findPlace(16).L_interes, places.findPlace(16).L_comida, places.findPlace(16).Gasolineras),
-            new Plc(places.findPlace(17).Lugar, places.findPlace(17).Habitantes, places.findPlace(17).L_interes, places.findPlace(17).L_comida, places.findPlace(17).Gasolineras)
+            new Plc(places.find(sortedPlaces[0]).Lugar, places.find(sortedPlaces[0]).Habitantes, places.find(sortedPlaces[0]).L_interes, places.find(sortedPlaces[0]).L_comida, places.find(sortedPlaces[0]).Gasolineras),
+            new Plc(places.find(sortedPlaces[1]).Lugar, places.find(sortedPlaces[1]).Habitantes, places.find(sortedPlaces[1]).L_interes, places.find(sortedPlaces[1]).L_comida, places.find(sortedPlaces[1]).Gasolineras),
+            new Plc(places.find(sortedPlaces[2]).Lugar, places.find(sortedPlaces[2]).Habitantes, places.find(sortedPlaces[2]).L_interes, places.find(sortedPlaces[2]).L_comida, places.find(sortedPlaces[2]).Gasolineras),
+            new Plc(places.find(sortedPlaces[3]).Lugar, places.find(sortedPlaces[3]).Habitantes, places.find(sortedPlaces[3]).L_interes, places.find(sortedPlaces[3]).L_comida, places.find(sortedPlaces[3]).Gasolineras),
+            new Plc(places.find(sortedPlaces[4]).Lugar, places.find(sortedPlaces[4]).Habitantes, places.find(sortedPlaces[4]).L_interes, places.find(sortedPlaces[4]).L_comida, places.find(sortedPlaces[4]).Gasolineras),
+            new Plc(places.find(sortedPlaces[5]).Lugar, places.find(sortedPlaces[5]).Habitantes, places.find(sortedPlaces[5]).L_interes, places.find(sortedPlaces[5]).L_comida, places.find(sortedPlaces[5]).Gasolineras),
+            new Plc(places.find(sortedPlaces[6]).Lugar, places.find(sortedPlaces[6]).Habitantes, places.find(sortedPlaces[6]).L_interes, places.find(sortedPlaces[6]).L_comida, places.find(sortedPlaces[6]).Gasolineras),
+            new Plc(places.find(sortedPlaces[7]).Lugar, places.find(sortedPlaces[7]).Habitantes, places.find(sortedPlaces[7]).L_interes, places.find(sortedPlaces[7]).L_comida, places.find(sortedPlaces[7]).Gasolineras),
+            new Plc(places.find(sortedPlaces[8]).Lugar, places.find(sortedPlaces[8]).Habitantes, places.find(sortedPlaces[8]).L_interes, places.find(sortedPlaces[8]).L_comida, places.find(sortedPlaces[8]).Gasolineras),
+            new Plc(places.find(sortedPlaces[9]).Lugar, places.find(sortedPlaces[9]).Habitantes, places.find(sortedPlaces[9]).L_interes, places.find(sortedPlaces[9]).L_comida, places.find(sortedPlaces[9]).Gasolineras),
+            new Plc(places.find(sortedPlaces[10]).Lugar, places.find(sortedPlaces[10]).Habitantes, places.find(sortedPlaces[10]).L_interes, places.find(sortedPlaces[10]).L_comida, places.find(sortedPlaces[10]).Gasolineras),
+            new Plc(places.find(sortedPlaces[11]).Lugar, places.find(sortedPlaces[11]).Habitantes, places.find(sortedPlaces[11]).L_interes, places.find(sortedPlaces[11]).L_comida, places.find(sortedPlaces[11]).Gasolineras),
+            new Plc(places.find(sortedPlaces[12]).Lugar, places.find(sortedPlaces[12]).Habitantes, places.find(sortedPlaces[12]).L_interes, places.find(sortedPlaces[12]).L_comida, places.find(sortedPlaces[12]).Gasolineras),
+            new Plc(places.find(sortedPlaces[13]).Lugar, places.find(sortedPlaces[13]).Habitantes, places.find(sortedPlaces[13]).L_interes, places.find(sortedPlaces[13]).L_comida, places.find(sortedPlaces[13]).Gasolineras),
+            new Plc(places.find(sortedPlaces[14]).Lugar, places.find(sortedPlaces[14]).Habitantes, places.find(sortedPlaces[14]).L_interes, places.find(sortedPlaces[14]).L_comida, places.find(sortedPlaces[14]).Gasolineras),
+            new Plc(places.find(sortedPlaces[15]).Lugar, places.find(sortedPlaces[15]).Habitantes, places.find(sortedPlaces[15]).L_interes, places.find(sortedPlaces[15]).L_comida, places.find(sortedPlaces[15]).Gasolineras),
+            new Plc(places.find(sortedPlaces[16]).Lugar, places.find(sortedPlaces[16]).Habitantes, places.find(sortedPlaces[16]).L_interes, places.find(sortedPlaces[16]).L_comida, places.find(sortedPlaces[16]).Gasolineras),
+            new Plc(places.find(sortedPlaces[17]).Lugar, places.find(sortedPlaces[17]).Habitantes, places.find(sortedPlaces[17]).L_interes, places.find(sortedPlaces[17]).L_comida, places.find(sortedPlaces[16]).Gasolineras)
+
+
+
 
     );
 
@@ -67,11 +70,11 @@ public class Datos_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        col_name.setCellValueFactory(new PropertyValueFactory<>("Lugar"));
-        col_people.setCellValueFactory(new PropertyValueFactory<>("Habitantes"));
-        col_intPlace.setCellValueFactory(new PropertyValueFactory<>("Lugares de interes"));
-        col_foodPlace.setCellValueFactory(new PropertyValueFactory<>("Lugares de comida"));
-        col_gasPlace.setCellValueFactory(new PropertyValueFactory<>("Gasolineras"));
+        col_name.setCellValueFactory(cellData -> cellData.getValue().name);
+        col_people.setCellValueFactory(cellData -> cellData.getValue().people);
+        col_intPlace.setCellValueFactory(cellData -> cellData.getValue().intPlace);
+        col_foodPlace.setCellValueFactory(cellData -> cellData.getValue().foodPlace);
+        col_gasPlace.setCellValueFactory(cellData -> cellData.getValue().gasPlace);
 
         tbl.setItems(list);
     }
