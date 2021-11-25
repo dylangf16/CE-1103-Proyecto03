@@ -40,6 +40,18 @@ public class LinkedList {
         return null;
     }
 
+    public Node findPlace(int searchValue) {
+        Node current = this.head;
+        while (current != null) {
+            if (current.place == searchValue) {
+                return current;
+            } else {
+                current = current.getNext();
+            }
+        }
+        return null;
+    }
+
     public Node delete(String searchValue) {
         Node current = this.head;
         Node previous = this.head;
