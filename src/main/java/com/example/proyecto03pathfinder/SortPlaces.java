@@ -47,85 +47,110 @@ public class SortPlaces {
         return NodeList;
     }
 
-    public static List<String> createNames(){
-        List<String> Lugares = new ArrayList<>();
-        String Lugar1 = "Estrella";
-        String Lugar2 = "San Isidro";
-        String Lugar3 = "Quebradilla";
-        String Lugar4 = "El Tejar de El Guarco";
-        String Lugar5 = "Taras";
-        String Lugar6 = "Cartago";
-        String Lugar7 = "Tres Rios";
-        String Lugar8 = "Llano Grande";
-        String Lugar9 = "Tierra Blanca";
-        String Lugar10 = "Cot";
-        String Lugar11 = "Cipreses";
-        String Lugar12 = "Pacayas";
-        String Lugar13 = "Turrialba";
-        String Lugar14 = "San Martin";
-        String Lugar15 = "Cervantes";
-        String Lugar16 = "Paraiso";
-        String Lugar17 = "Cachi";
-        String Lugar18 = "Orosi";
-        Lugares.add(Lugar1);
-        Lugares.add(Lugar2);
-        Lugares.add(Lugar3);
-        Lugares.add(Lugar4);
-        Lugares.add(Lugar5);
-        Lugares.add(Lugar6);
-        Lugares.add(Lugar7);
-        Lugares.add(Lugar8);
-        Lugares.add(Lugar9);
-        Lugares.add(Lugar10);
-        Lugares.add(Lugar11);
-        Lugares.add(Lugar12);
-        Lugares.add(Lugar13);
-        Lugares.add(Lugar14);
-        Lugares.add(Lugar15);
-        Lugares.add(Lugar16);
-        Lugares.add(Lugar17);
-        Lugares.add(Lugar18);
+    public static String[] createNames(){
+        String[] Lugares = new String[]{"Estrella", "San Isidro", "Quebradilla", "El Tejar de El Guarco",
+                "Taras", "Cartago", "Tres Rios", "Llano Grande", "Tierra Blanca", "Cot", "Cipreses", "Pacayas", "Turrialba",
+                "San Martin", "Cervantes", "Paraiso", "Cachi", "Orosi"};
         return Lugares;
     }
 
-    public static List<String> bubble_srt() {
-        List<String> array = createNames();
-        int n = array.size();
-        int k;
-        int a = 0;
-        for (int m = 0; m < n; m++) {
-            for (int i = 0; i < n - 1; i++) {
-                k = i + 1;
-                if (Character.getNumericValue(array.get(i).charAt(a)) > Character.getNumericValue(array.get(k).charAt(a))) {
-                    String temp;
-                    temp = array.get(i);
-                    array.set(i, array.get(k));
-                    array.set(k, temp);
-                }else if (Character.getNumericValue(array.get(i).charAt(a)) == Character.getNumericValue(array.get(k).charAt(a))){
-                    while (Character.getNumericValue(array.get(i).charAt(a)) == Character.getNumericValue(array.get(k).charAt(a))) {
-                        a++;
-                    }
-                    if (Character.getNumericValue(array.get(i).charAt(a)) > Character.getNumericValue(array.get(k).charAt(a))) {
-                        String temp;
-                        temp = array.get(i);
-                        array.set(i, array.get(k));
-                        array.set(k, temp);
-                        a=0;
-                    }else{
-                        a=0;
-                    }
-                }
+    public static String[] SortedPlaces(){
+        String[] input = createNames();
+        sort(input);
+        return input;
+    }
+
+    public static void sort(String[] a) {
+
+        int left = 0;
+        int right = a.length - 1;
+        quickSort(left, right, a);
+
+    }
+
+    private static void quickSort(int left, int right, String[] a) {
+
+        if (left >= right) {
+            return;
+        }
+        String pivot;
+        pivot = getMedian(left, right, a);
+
+        int partition = partition(left, right, pivot, a);
+
+        quickSort(0, partition - 1, a);
+
+        quickSort(partition + 1, right, a);
+    }
+
+    private static int partition(int left, int right, String pivot, String[] a) {
+
+        int leftCursor = left - 1;
+        int rightCursor = right;
+
+        while (leftCursor < rightCursor) {
+
+            while (((Comparable<String>) a[++leftCursor]).compareTo(pivot) < 0);
+
+            while (rightCursor > 0 && ((Comparable<String>) a[--rightCursor]).compareTo(pivot) > 0);
+
+            if (leftCursor >= rightCursor) {
+
+                break;
+
+            } else {
+
+                swap(leftCursor, rightCursor, a);
             }
         }
-        return array;
+
+        swap(leftCursor, right, a);
+
+        return leftCursor;
+
+    }
+
+    public static String getMedian(int left, int right, String[] a) {
+
+        int center = (left + right) / 2;
+
+        if (((Comparable<String>) a[left]).compareTo(a[center]) > 0) {
+
+        }
+        swap(left, center, a);
+
+        if (((Comparable<String>) a[left]).compareTo(a[right]) > 0) {
+
+        }
+        swap(left, right, a);
+
+        if (((Comparable<String>) a[center]).compareTo(a[right]) > 0) {
+
+        }
+        swap(center, right, a);
+
+        swap(center, right, a);
+        return a[right];
+    }
+
+    public static void swap(int left, int right, String[] a) {
+        String temp = a[left];
+        a[left] = a[right];
+        a[right] = temp;
+    }
+
+    public static void printArray(String[] a) {
+        for (String i : a) {
+            System.out.print(i + " ");
+        }
     }
 
     public static LinkedList sortNodes(){
         LinkedList Nodes = createNodeList();
         LinkedList sortedNodes = new LinkedList();
-        List<String> placesList = bubble_srt();
-        for (int i = 0; i < placesList.size(); i++){
-            Node temp = Nodes.find(placesList.get(i));
+        String[] placesList = SortedPlaces();
+        for (int i = 0; i < placesList.length; i++){
+            Node temp = Nodes.find(placesList[i]);
             temp.setPlace(i);
             sortedNodes.insert(temp);
         }
