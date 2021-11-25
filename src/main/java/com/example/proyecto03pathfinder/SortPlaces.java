@@ -1,6 +1,7 @@
 package com.example.proyecto03pathfinder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SortPlaces {
@@ -149,7 +150,9 @@ public class SortPlaces {
         LinkedList Nodes = createNodeList();
         LinkedList sortedNodes = new LinkedList();
         String[] placesList = SortedPlaces();
+        System.out.println(Arrays.toString(placesList));
         for (int i = 0; i < placesList.length; i++){
+            System.out.println("Va " + i);
             Node temp = Nodes.find(placesList[i]);
             temp.setPlace(i);
             sortedNodes.insert(temp);
