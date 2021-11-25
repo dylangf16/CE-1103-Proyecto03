@@ -1,7 +1,5 @@
 package com.example.proyecto03pathfinder;
 
-import org.w3c.dom.NodeList;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -112,6 +110,8 @@ public class SortPlaces {
                         temp = array.get(i);
                         array.set(i, array.get(k));
                         array.set(k, temp);
+                        a=0;
+                    }else{
                         a=0;
                     }
                 }

@@ -79,7 +79,7 @@ public class Datos_Controller implements Initializable {
     @FXML
     private void search(KeyEvent event){
 
-        search.textProperty().addListener((observableValue, oldValue, newValue) -> {
+        search.textProperty().addListener((observable, oldValue, newValue) -> {
 
             filter.setPredicate((Predicate<? super Plc>) (Plc plc)-> {
                 if (newValue.isEmpty() || newValue == null){
