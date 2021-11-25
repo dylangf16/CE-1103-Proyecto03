@@ -7,12 +7,83 @@ package com.example.proyecto03pathfinder;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Mapa_Controller {
+    @FXML // fx:id="image"
+    private ImageView image; // Value injected by FXMLLoader
+
+    @FXML // fx:id="ceroauno"
+    private Line ceroauno; // Value injected by FXMLLoader
+
+    @FXML // fx:id="unoados"
+    private Line unoados; // Value injected by FXMLLoader
+
+    @FXML // fx:id="dosatres"
+    private Line dosatres; // Value injected by FXMLLoader
+
+    @FXML // fx:id="dosacinco"
+    private Line dosacinco; // Value injected by FXMLLoader
+
+    @FXML // fx:id="cuatroacinco"
+    private Line cuatroacinco; // Value injected by FXMLLoader
+
+    @FXML // fx:id="cincoaseis"
+    private Line cincoaseis; // Value injected by FXMLLoader
+
+    @FXML // fx:id="seisasiete"
+    private Line seisasiete; // Value injected by FXMLLoader
+
+    @FXML // fx:id="sieteaocho"
+    private Line sieteaocho; // Value injected by FXMLLoader
+
+    @FXML // fx:id="ochoanueve"
+    private Line ochoanueve; // Value injected by FXMLLoader
+
+    @FXML // fx:id="cincoanueve"
+    private Line cincoanueve; // Value injected by FXMLLoader
+
+    @FXML // fx:id="cuatroanueve"
+    private Line cuatroanueve; // Value injected by FXMLLoader
+
+    @FXML // fx:id="cuatroaquince"
+    private Line cuatroaquince; // Value injected by FXMLLoader
+
+    @FXML // fx:id="catorceaquince"
+    private Line catorceaquince; // Value injected by FXMLLoader
+
+    @FXML // fx:id="quinceadieciseis"
+    private Line quinceadieciseis; // Value injected by FXMLLoader
+
+    @FXML // fx:id="quinceadiecisiete"
+    private Line quinceadiecisiete; // Value injected by FXMLLoader
+
+    @FXML // fx:id="dieciseisadiecisiete"
+    private Line dieciseisadiecisiete; // Value injected by FXMLLoader
+
+    @FXML // fx:id="nueveadiez"
+    private Line nueveadiez; // Value injected by FXMLLoader
+
+    @FXML // fx:id="diaezaonce"
+    private Line diaezaonce; // Value injected by FXMLLoader
+
+    @FXML // fx:id="onceadoce"
+    private Line onceadoce; // Value injected by FXMLLoader
+
+    @FXML // fx:id="doceatrece"
+    private Line doceatrece; // Value injected by FXMLLoader
+
+    @FXML // fx:id="treceacatorce"
+    private Line treceacatorce; // Value injected by FXMLLoader
+
+    @FXML // fx:id="dosacuatro"
+    private Line dosacuatro; // Value injected by FXMLLoader
 
     @FXML // fx:id="CD"
     private Text CD; // Value injected by FXMLLoader
@@ -83,11 +154,11 @@ public class Mapa_Controller {
     @FXML // fx:id="Inicio"
     private TextField Inicio; // Value injected by FXMLLoader
 
-    @FXML
-    private TextField InicioRuta;
+    @FXML // fx:id="InicioRuta"
+    private TextField InicioRuta; // Value injected by FXMLLoader
 
-    @FXML
-    private TextField FinRuta;
+    @FXML // fx:id="FinRuta"
+    private TextField FinRuta; // Value injected by FXMLLoader
 
     @FXML // fx:id="Final"
     private TextField Final; // Value injected by FXMLLoader
@@ -98,6 +169,13 @@ public class Mapa_Controller {
     @FXML // fx:id="textoruta"
     private Label textoruta; // Value injected by FXMLLoader
 
+    @FXML
+    void Btn_Info(MouseEvent event) throws IOException {
+        Datos_Application datos = new Datos_Application();
+        Stage stage = new Stage();
+        datos.start(stage);
+
+    }
 
     @FXML
     void Enviar(MouseEvent event) {
@@ -367,7 +445,6 @@ public class Mapa_Controller {
     }
     @FXML
     void Ruta(MouseEvent event) {
-
         int partida = Integer.parseInt(InicioRuta.getText());
         int llegada = Integer.parseInt(FinRuta.getText());
 

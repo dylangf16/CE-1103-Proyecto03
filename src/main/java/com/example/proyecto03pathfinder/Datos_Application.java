@@ -11,7 +11,7 @@ public class Datos_Application extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Mapa_Application.class.getResource("Datos.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1222, 709);
+        Scene scene = new Scene(fxmlLoader.load(), 1100, 730);
         stage.setTitle("Porahí-Datos");
         stage.setScene(scene);
         stage.show();
