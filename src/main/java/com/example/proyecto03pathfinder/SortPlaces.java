@@ -17,7 +17,7 @@ public class SortPlaces {
         Node Lugar6 = new Node("Cartago", "315 000", "Estatua de Jesus Jimenez, Torre de Agua El Bosque", "La Ventanita Criolla, Area 27 Street Food", "Raul Molina Gas Station, Service Station Los Angeles");
         Node Lugar7 = new Node("Tres Rios", "9 316", "Pronatura Park, El Rancho de Juan", "ULa, Restaurante Feliz, Leos Caribbean", "Delta Tres Rios, Servilndoor");
         Node Lugar8 = new Node("Llano Grande", "5 068", "Vivero Llano Verde, Villa 40033 La Laguna", "Soda y Pulperia Mary, Bar La Cueva, Cachos Bar", "Del Surco Gas Station");
-        Node Lugar9 = new Node("Tierra Blanca", "120", "Plaza", "Pizza", "Bomba");
+        Node Lugar9 = new Node("Tierra Blanca", "5 873", "Mirador de tierra Blanca Cartago, Plaza de Futbol de Tierra Blanca", "Sonrisas Irazú Restaurante y café, Soda Mi Ksa", "Del Surco Gas Station, Gasolinera local, Llantera la plaza");
         Node Lugar10 = new Node("Cot", "11 231", "Sunset Garden, Finca el Descansadero", "Restaurante 1910, Soda Antojitos Cot, La Casita del Sabor Cot", "Del Surco Gas Station");
         Node Lugar11 = new Node("Cipreses", "4 199", "Calvario de la comunidad de Cipreses de Oreamuno, Campanario e la Iglesia Catolica", "Mi Fogon, Granja Crujim, Soda San Miguel", "Servicentro Pacayas, Estacion de Servicentro Cervantes");
         Node Lugar12 = new Node("Pacayas", "5 963", "Parador fotográfico Pacayas", "Sabros Pizza, DON PEPE EL POLLO DEL PUEBLO", "Servicentro Pacayas");
@@ -146,20 +146,5 @@ public class SortPlaces {
         }
     }
 
-    public static LinkedList sortNodes(){
-        LinkedList Nodes = createNodeList();
-        LinkedList sortedNodes = new LinkedList();
-        String[] placesList = SortedPlaces();
-        System.out.println(Arrays.toString(placesList));
-        for (int i = 0; i < placesList.length; i++){
-            System.out.println("Va " + i);
-            Node temp = Nodes.find(placesList[i]);
-            temp.setPlace(i);
-            Nodes.delete(temp.Lugar);
-            temp.next = null;
-            sortedNodes.insert(temp);
-        }
-        return sortedNodes;
-    }
 
 }

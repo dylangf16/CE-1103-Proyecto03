@@ -17,6 +17,8 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
+
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 
@@ -37,7 +39,7 @@ public class Datos_Controller implements Initializable {
     @FXML
     private TableColumn<Plc,String> col_gasPlace;
 
-    LinkedList places = SortPlaces.sortNodes();
+    LinkedList places = SortPlaces.createNodeList();
     String[] sortedPlaces = SortPlaces.SortedPlaces();
 
     ObservableList list = FXCollections.observableArrayList(
@@ -59,8 +61,6 @@ public class Datos_Controller implements Initializable {
             new Plc(places.find(sortedPlaces[15]).Lugar, places.find(sortedPlaces[15]).Habitantes, places.find(sortedPlaces[15]).L_interes, places.find(sortedPlaces[15]).L_comida, places.find(sortedPlaces[15]).Gasolineras),
             new Plc(places.find(sortedPlaces[16]).Lugar, places.find(sortedPlaces[16]).Habitantes, places.find(sortedPlaces[16]).L_interes, places.find(sortedPlaces[16]).L_comida, places.find(sortedPlaces[16]).Gasolineras),
             new Plc(places.find(sortedPlaces[17]).Lugar, places.find(sortedPlaces[17]).Habitantes, places.find(sortedPlaces[17]).L_interes, places.find(sortedPlaces[17]).L_comida, places.find(sortedPlaces[16]).Gasolineras)
-
-
 
 
     );
@@ -87,7 +87,7 @@ public class Datos_Controller implements Initializable {
             filter.setPredicate((Predicate<? super Plc>) (Plc plc)-> {
                 if (newValue.isEmpty() || newValue == null){
                     return true;
-                }else if (plc.getName().contains(newValue)){
+                }else if (Pattern.compile(Pattern.quote(newValue), Pattern.CASE_INSENSITIVE).matcher(plc.getName()).find()){
                     return true;
                 }
 
