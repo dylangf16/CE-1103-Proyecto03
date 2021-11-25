@@ -120,15 +120,4 @@ public class SortPlaces {
         return array;
     }
 
-    public static LinkedList sortNodes() {
-        List<String> listOfPlaces = bubble_srt();
-        LinkedList NodeList = createNodeList();
-        LinkedList sortedNodeList = new LinkedList();
-        for (int i = 0; i < listOfPlaces.size(); i++) {
-            Node ins = NodeList.find(listOfPlaces.get(i));
-            ins.setPlace(i);
-            sortedNodeList.insert(ins);
-        }
-        return sortedNodeList;
-    }
 }
