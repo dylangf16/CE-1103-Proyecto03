@@ -4,6 +4,7 @@ public class Node {
 
         String Lugar, Habitantes, L_interes, L_comida, Gasolineras;
         Node next;
+        int place;
 
         public Node(String place, String people, String Place_interest, String Place_food, String GasPlace) {
             this.Lugar = place;
@@ -12,6 +13,7 @@ public class Node {
             this.L_comida = Place_food;
             this.Gasolineras = GasPlace;
             this.next = null;
+            this.place = 0;
         }
 
         public void setNext(Node next){
@@ -20,6 +22,10 @@ public class Node {
 
         public Node getNext(){
             return this.next;
+        }
+
+        public void setPlace(int p){
+            this.place  = p;
         }
 
 }
