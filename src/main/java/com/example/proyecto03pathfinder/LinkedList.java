@@ -5,19 +5,19 @@ public class LinkedList {
     private Node tail;
     private int size;
 
+    /**
+     * Metodo constructor
+     */
     public LinkedList() {
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
-    public boolean isEmpty() {
-        return this.head == null;
-    }
 
-    public int size() {
-        return this.size;
-    }
-
+    /**
+     * Metodo para insertar un nodo a la lista
+     * @param newBNode el nodo que se va a insertar
+     */
     public void insert(Node newBNode) {
         if(this.head == null){
             this.head = this.tail = newBNode;
@@ -28,44 +28,17 @@ public class LinkedList {
         this.size++;
     }
 
+    /**
+     * Metodo para encontrar el nodo que almacene un string en especifico
+     * @param searchValue string que se va a buscar en los nodos de la lista
+     * @return
+     */
     public Node find(String searchValue) {
         Node current = this.head;
         while (current != null) {
             if (current.Lugar == searchValue) {
                 return current;
             } else {
-                current = current.getNext();
-            }
-        }
-        return null;
-    }
-
-    public Node findPlace(int searchValue) {
-        Node current = this.head;
-        while (current != null) {
-            if (current.place == searchValue) {
-                return current;
-            } else {
-                current = current.getNext();
-            }
-        }
-        return null;
-    }
-
-    public Node delete(String searchValue) {
-        Node current = this.head;
-        Node previous = this.head;
-
-        while (current != null) {
-            if (current.Lugar.equals(searchValue)) {
-                if (current == this.head) {
-                    this.head = this.head.getNext();
-                } else {
-                    previous.setNext(current.getNext());
-                }
-                return current;
-            } else {
-                previous = current;
                 current = current.getNext();
             }
         }

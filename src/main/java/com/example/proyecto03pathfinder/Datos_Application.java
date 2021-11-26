@@ -8,6 +8,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Datos_Application extends Application {
+
+    /**
+     * Inicia la ventana de ayuda al usuario
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Mapa_Application.class.getResource("Datos.fxml"));

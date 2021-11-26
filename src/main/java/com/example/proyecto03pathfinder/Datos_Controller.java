@@ -24,24 +24,48 @@ import javafx.scene.input.KeyEvent;
 
 public class Datos_Controller implements Initializable {
 
+    /**
+     * Barra de busqueda
+     */
     @FXML
     private TextField search;
+    /**
+     * Tabla de contenidos
+     */
     @FXML
     private TableView<Plc> tbl;
+    /**
+     * Columna del nombre de los lugares
+     */
     @FXML
     private TableColumn<Plc,String> col_name;
+    /**
+     * Columna de la cantidad de habitantes
+     */
     @FXML
     private TableColumn<Plc,String> col_people;
+    /**
+     * Columna de lugares interesantes
+     */
     @FXML
     private TableColumn<Plc,String> col_intPlace;
+    /**
+     * Columna de luagres de comida
+     */
     @FXML
     private TableColumn<Plc,String> col_foodPlace;
+    /**
+     * Columna de gasolineras
+     */
     @FXML
     private TableColumn<Plc,String> col_gasPlace;
 
     LinkedList places = SortPlaces.createNodeList();
     String[] sortedPlaces = SortPlaces.SortedPlaces();
 
+    /**
+     * Contenido de la tabla
+     */
     ObservableList list = FXCollections.observableArrayList(
             new Plc(places.find(sortedPlaces[0]).Lugar, places.find(sortedPlaces[0]).Habitantes, places.find(sortedPlaces[0]).L_interes, places.find(sortedPlaces[0]).L_comida, places.find(sortedPlaces[0]).Gasolineras),
             new Plc(places.find(sortedPlaces[1]).Lugar, places.find(sortedPlaces[1]).Habitantes, places.find(sortedPlaces[1]).L_interes, places.find(sortedPlaces[1]).L_comida, places.find(sortedPlaces[1]).Gasolineras),
@@ -68,6 +92,11 @@ public class Datos_Controller implements Initializable {
     FilteredList filter = new FilteredList(list, e->true);
 
 
+    /**
+     * Configuracion inicial de la tabla
+     * @param url
+     * @param rb
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         col_name.setCellValueFactory(cellData -> cellData.getValue().name);
@@ -79,6 +108,10 @@ public class Datos_Controller implements Initializable {
         tbl.setItems(list);
     }
 
+    /**
+     * Metodo de filtracion
+     * @param event KeyRealease
+     */
     @FXML
     private void search(KeyEvent event){
 
@@ -101,43 +134,54 @@ public class Datos_Controller implements Initializable {
 
     }
 
+}
+
+/**
+ * Clase de las celdas
+ */
+class Plc {
+
+    SimpleStringProperty name;
+    SimpleStringProperty people;
+    SimpleStringProperty intPlace;
+    SimpleStringProperty foodPlace;
+    SimpleStringProperty gasPlace;
+
+    public String getName() {
+        return name.get();
     }
 
-    class Plc {
+    public String getPeople() {
+        return people.get();
+    }
 
-        SimpleStringProperty name;
-        SimpleStringProperty people;
-        SimpleStringProperty intPlace;
-        SimpleStringProperty foodPlace;
-        SimpleStringProperty gasPlace;
+    public String getIntPlace() {
+        return intPlace.get();
+    }
 
-        public String getName() {
-            return name.get();
-        }
+    public String getFoodPlace() {
+        return foodPlace.get();
+    }
 
-        public String getPeople() {
-            return people.get();
-        }
-
-        public String getIntPlace() {
-            return intPlace.get();
-        }
-
-        public String getFoodPlace() {
-            return foodPlace.get();
-        }
-
-        public String getGasPlace() {
-            return gasPlace.get();
-        }
+    public String getGasPlace() {
+        return gasPlace.get();
+    }
 
 
-        public Plc(String name, String people, String intPlace, String foodPlace, String gasPlace){
-            this.name = new SimpleStringProperty(name);
-            this.people = new SimpleStringProperty(people);
-            this.intPlace = new SimpleStringProperty(intPlace);
-            this.foodPlace = new SimpleStringProperty(foodPlace);
-            this.gasPlace = new SimpleStringProperty(gasPlace);
-        }
+    /**
+     * Metodo contructor de una fila
+     * @param name Nombre del lugar
+     * @param people Cantidad de habitantes
+     * @param intPlace Lugares interesantes
+     * @param foodPlace Lugares de comida
+     * @param gasPlace Gasolineras
+     */
+    public Plc(String name, String people, String intPlace, String foodPlace, String gasPlace){
+        this.name = new SimpleStringProperty(name);
+        this.people = new SimpleStringProperty(people);
+        this.intPlace = new SimpleStringProperty(intPlace);
+        this.foodPlace = new SimpleStringProperty(foodPlace);
+        this.gasPlace = new SimpleStringProperty(gasPlace);
+    }
 
 }

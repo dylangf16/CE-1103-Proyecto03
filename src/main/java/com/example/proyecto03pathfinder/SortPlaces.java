@@ -7,6 +7,10 @@ import java.util.List;
 public class SortPlaces {
 
 
+    /**
+     * Metodo que crea la LinkedList con todos los nodos y su respectiva informacion
+     * @return LinkedList de todos los nodos
+     */
     public static LinkedList createNodeList() {
         LinkedList NodeList = new LinkedList();
         Node Lugar1 = new Node("Estrella", "47 743", "Pesca de Trucha Las Piedras, Finca la catarata", "Soda La Amistad, Pesca La Estrella, Cafeteria mi Sueno", "Gasoline Station, Gasoline Station El Empalme");
@@ -48,6 +52,10 @@ public class SortPlaces {
         return NodeList;
     }
 
+    /**
+     * Metodo que genera la lista en desorden con el nombre de todos los lugares
+     * @return lista desordenada
+     */
     public static String[] createNames(){
         String[] Lugares = new String[]{"Estrella", "San Isidro", "Quebradilla", "El Tejar de El Guarco",
                 "Taras", "Cartago", "Tres Rios", "Llano Grande", "Tierra Blanca", "Cot", "Cipreses", "Pacayas", "Turrialba",
@@ -55,12 +63,20 @@ public class SortPlaces {
         return Lugares;
     }
 
+    /**
+     * Llama el metodo con la lista en desorden, llama el sort para ordenarla y retorna la lista ordenada
+     * @return
+     */
     public static String[] SortedPlaces(){
         String[] input = createNames();
         sort(input);
         return input;
     }
 
+    /**
+     * Crea el primer y ultimo valor de la lista, llama el quicksort
+     * @param a lista desordenada
+     */
     public static void sort(String[] a) {
 
         int left = 0;
@@ -69,6 +85,12 @@ public class SortPlaces {
 
     }
 
+    /**
+     * Ordena la lista alfabeticamente por medio de recursividad
+     * @param left indice mas bajo de la lista
+     * @param right indice mas alto de la lista
+     * @param a lista desordenada
+     */
     private static void quickSort(int left, int right, String[] a) {
 
         if (left >= right) {
@@ -84,6 +106,14 @@ public class SortPlaces {
         quickSort(partition + 1, right, a);
     }
 
+    /**
+     * Compara los valores de la lista y los cambia de lugar de ser necesario
+     * @param left indice menor de la lista
+     * @param right indice mayor de la lista
+     * @param pivot string en medio de la lista
+     * @param a lista desordenada
+     * @return lista ordenada
+     */
     private static int partition(int left, int right, String pivot, String[] a) {
 
         int leftCursor = left - 1;
@@ -111,6 +141,13 @@ public class SortPlaces {
 
     }
 
+    /**
+     * Obtiene el valor del indice de en medio de la lista
+     * @param left indice menor de la lista
+     * @param right indice mayor de la lista
+     * @param a lista desordenada
+     * @return string que se encuentra en medio de la lista
+     */
     public static String getMedian(int left, int right, String[] a) {
 
         int center = (left + right) / 2;
@@ -134,17 +171,15 @@ public class SortPlaces {
         return a[right];
     }
 
+    /**
+     * Cambia de luagr dos valores de la lista
+     * @param left indice de string menor
+     * @param right indice de string mayor
+     * @param a desordenada
+     */
     public static void swap(int left, int right, String[] a) {
         String temp = a[left];
         a[left] = a[right];
         a[right] = temp;
     }
-
-    public static void printArray(String[] a) {
-        for (String i : a) {
-            System.out.print(i + " ");
-        }
-    }
-
-
 }
